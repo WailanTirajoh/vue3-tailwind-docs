@@ -1,6 +1,6 @@
 export default {
-  title: "VitePress",
-  description: "Just playing around.",
+  title: "Vue3 Tailwind Docs",
+  description: "Vue3 Tailwind Documentation Site",
   themeConfig: {
     nav: [
       {
@@ -21,10 +21,6 @@ export default {
               text: "Getting Started",
               link: "/guide/getting-started",
             },
-            {
-              text: "Configuration",
-              link: "/guide/configuration",
-            },
           ],
         },
         {
@@ -32,15 +28,35 @@ export default {
           items: [
             {
               text: "Button",
-              link: "/guide/what-is-vue3-tailwind",
+              link: "/guide/components/button",
             },
             {
-              text: "Dropdown",
-              link: "/guide/getting-started",
+              text: "Datatable",
+              link: "/guide/components/datatable",
             },
             {
-              text: "Select",
-              link: "/guide/configuration",
+              text: "Dropdown Menu",
+              link: "/guide/components/dropdown-menu",
+            },
+            {
+              text: "Form",
+              link: "/guide/components/form",
+            },
+            {
+              text: "Modal",
+              link: "/guide/components/modal",
+            },
+            {
+              text: "Offcanvas",
+              link: "/guide/components/offcanvas",
+            },
+            {
+              text: "Tabs",
+              link: "/guide/components/tabs",
+            },
+            {
+              text: "Toasts",
+              link: "/guide/components/toasts",
             },
           ],
         },
