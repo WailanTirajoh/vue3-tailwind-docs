@@ -40,11 +40,11 @@ import css to main.css
 ```
 
 ### Nuxt 3
-create plugins/vue3-tailwind.ts
+Create plugins/vue3-tailwind.ts
 
 ```js
 // plugins/vue3-tailwind.ts
-import Vue3Tailwind from "vue3-tailwind"
+import { Vue3Tailwind } from "vue3-tailwind"
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(Vue3Tailwind)
@@ -57,13 +57,10 @@ import css to main.css
 @import "vue3-tailwind/dist/style.css";
 ```
 
-assign the css & plugins at nuxt.config.css
+assign the css at nuxt.config.css
 ```js
 // nuxt.config.css
 export default defineNuxtConfig({
-    css: ["~/assets/css/main.css"],
-    plugins: [
-      "~/plugins/vue3-tailwind.ts"
-    ]
+    css: ["~/assets/css/main.css"]
 });
 ```
