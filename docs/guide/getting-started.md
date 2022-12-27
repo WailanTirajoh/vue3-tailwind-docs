@@ -57,10 +57,13 @@ import css to main.css
 @import "vue3-tailwind/dist/style.css";
 ```
 
-use the css at nuxt.config.css
+assign the css & plugins at nuxt.config.css
 ```js
 // nuxt.config.css
 export default defineNuxtConfig({
     css: ["~/assets/css/main.css"],
+    plugins: [
+      "~/plugins/vue3-tailwind.ts"
+    ]
 });
 ```

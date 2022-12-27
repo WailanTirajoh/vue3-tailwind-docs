@@ -1,13 +1,13 @@
 # Button
 
 ## Usage
-```ts{2}
+```vue{2}
 <script setup lang="ts">
 import { TwButton } from "vue3-tailwind"
 </script>
 ```
 And on your template use the button
-```html{2}
+```vue{2}
 <template>
     <tw-button>Hi</tw-button>
 </template>
@@ -23,7 +23,7 @@ Variant is set of predefined css classes use for button:
 
 ***Usage:***
 
-```html
+```vue
 <tw-button variant="secondary">Hi</tw-button>
 ```
 
@@ -127,7 +127,7 @@ Available Options for Icon Position:
 - right
 
 ***Usage:***
-```html
+```vue
 <tw-button icon-position="right">Button With Icon</tw-button>
 ```
 
@@ -149,7 +149,7 @@ Available Options for Disabled:
 - false
 
 ***Usage:***
-```html
+```vue
 <tw-button :disabled="true">Button With Icon</tw-button>
 ```
 
@@ -162,7 +162,7 @@ Available Options for Ripple:
 - false
 
 ***Usage:***
-```html
+```vue
 <tw-button :ripple="true">Button With Icon</tw-button>
 ```
 
@@ -173,7 +173,7 @@ Available Options for Loading:
 - false
 
 ***Usage:***
-```html
+```vue
 <tw-button :disabled="true">Button With Icon</tw-button>
 ```
 

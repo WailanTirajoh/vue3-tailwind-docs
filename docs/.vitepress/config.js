@@ -1,6 +1,6 @@
 export default {
-  title: "Vue3 Tailwind Docs",
-  description: "Vue3 Tailwind Documentation Site",
+  title: "Vue 3 Tailwind Docs",
+  description: "Vue 3 Tailwind Documentation Site",
   themeConfig: {
     nav: [
       {
