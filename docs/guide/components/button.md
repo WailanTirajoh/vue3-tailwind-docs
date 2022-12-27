@@ -1,33 +1,39 @@
 # Button
 
 ## Usage
+
 ```vue{2}
 <script setup lang="ts">
 import { TwButton } from "vue3-tailwind"
 </script>
 ```
+
 And on your template use the button
+
 ```vue{2}
 <template>
-    <tw-button>Hi</tw-button>
+    <TwButton>Hi</TwButton>
 </template>
 ```
-***
+
+---
 
 ## Props
+
 This is set of properties that can be pass to TwButton component
 
-
 ## Variant
+
 Variant is set of predefined css classes use for button:
 
-***Usage:***
+**_Usage:_**
 
 ```vue
-<tw-button variant="secondary">Hi</tw-button>
+<TwButton variant="secondary">Hi</TwButton>
 ```
 
 Here's the list of available variants:
+
 - primary
 - secondary
 - danger
@@ -44,10 +50,10 @@ Here's the list of available variants:
 - outline-info
 - none
 
-
 **Default** Variant is `primary`
 
 ::: details
+
 ```js
 const COLORS: Record<ButtonVariant, string> = {
   ["primary"]: "bg-gray-800 text-white",
@@ -72,46 +78,54 @@ const COLORS: Record<ButtonVariant, string> = {
   ["none"]: "",
 };
 ```
+
 :::
 
 ## Icon
+
 By default `Feather Icon` is used as the main icon on this, it can also be replaceable via slot. Here's how you can use the component
 
-***Usage:***
+**_Usage:_**
+
 ```html
-<tw-button icon="airplay">Button With Icon</tw-button>
+<TwButton icon="airplay">Button With Icon</TwButton>
 ```
 
 We can also parse div to icon slot if we dont want to use the default Feather Icon
+
 ```html
-<tw-button icon="airplay">
-    Button With Icon
-    <template #icon>
-        <!-- You Custom Icon goes here -->
-        <!-- 
+<TwButton icon="airplay">
+  Button With Icon
+  <template #icon>
+    <!-- You Custom Icon goes here -->
+    <!-- 
             Notes: This will replace the feather icons 
             even if we pass it as props 
         -->
-    </template>
-</tw-button>
+  </template>
+</TwButton>
 ```
 
 Can find available icon's listed here: https://feathericons.com/
 
 ## Text Position
+
 Available Options for Text Position:
+
 - left
 - right
 - center
 
-***Usage:***
+**_Usage:_**
+
 ```html
-<tw-button text-position="right">Button With Icon</tw-button>
+<TwButton text-position="right">Button With Icon</TwButton>
 ```
 
 Default Text Position `left`
 
 ::: details
+
 ```js
 const TEXT_POSITIONS: Record<ButtonTextPosition, string> = {
   ["left"]: "text-left",
@@ -119,62 +133,76 @@ const TEXT_POSITIONS: Record<ButtonTextPosition, string> = {
   ["center"]: "text-center",
 };
 ```
+
 :::
 
 ## Icon Position
+
 Available Options for Icon Position:
+
 - left
 - right
 
-***Usage:***
+**_Usage:_**
+
 ```vue
-<tw-button icon-position="right">Button With Icon</tw-button>
+<TwButton icon-position="right">Button With Icon</TwButton>
 ```
 
 Default value for Icon Position props `left`
 
 ::: details
+
 ```js
 const ICON_POSITIONS: Record<ButtonIconPosition, string> = {
   ["left"]: "float-left",
   ["right"]: "float-right",
 };
-
 ```
+
 :::
 
 ## Disabled
+
 Available Options for Disabled:
+
 - true
 - false
 
-***Usage:***
+**_Usage:_**
+
 ```vue
-<tw-button :disabled="true">Button With Icon</tw-button>
+<TwButton :disabled="true">Button With Icon</TwButton>
 ```
 
 Default value for Disabled props `false`
 
 ## Ripple
+
 Uses ripple directive to show ripple effect on this component
 Available Options for Ripple:
+
 - true
 - false
 
-***Usage:***
+**_Usage:_**
+
 ```vue
-<tw-button :ripple="true">Button With Icon</tw-button>
+<TwButton :ripple="true">Button With Icon</TwButton>
 ```
 
 ## Loading
+
 When loading is on, if we have icon, it will replace it with spinner icon and disable the button. It accept boolean as value
 Available Options for Loading:
+
 - true
 - false
 
-***Usage:***
+**_Usage:_**
+
 ```vue
-<tw-button :disabled="true">Button With Icon</tw-button>
+<TwButton :disabled="true">Button With Icon</TwButton>
 ```
 
 Default value for Loading props `true`

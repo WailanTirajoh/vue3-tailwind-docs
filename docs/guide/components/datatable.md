@@ -69,8 +69,9 @@ const data = ref({
   },
 });
 
-// Replace this with your API call, you can use Axios / Fetch / Other plugin.
-// It required to return the array data and totalData (For show the data and create pagination)
+// Replace this with your API call
+// You can use Axios / Fetch or other HTTP Client plugin.
+// It required to return the array data and totalData
 const fetchData = async () => {
   const baseUrl = "https://dummyjson.com/products";
   const response = await fetch(
@@ -93,42 +94,112 @@ const fetchData = async () => {
 </script>
 
 <template>
-    <tw-datatable-server
-        :fetch-data="fetchData"
-        v-model:search="data.search"
-        v-model:limit="data.limit"
-        v-model:offset="data.offset"
-        v-model:selected="data.selected"
-        v-model:sort-by="data.sortBy"
-        v-model:sort-type="data.sortType"
-        :column="data.column"
-        :setting="data.setting"
-    >
-        <template #row="{ column, data }">
-            <template v-if="column.field === 'brand'">
-                {{ data.brand }}
-            </template>
-            <template v-if="column.field === 'category'">
-                {{ data.category }}
-            </template>
-            <template v-if="column.field === 'description'">
-                {{ data.description }}
-            </template>
-            <template v-if="column.field === 'action'">
-                <div class="flex gap-2 justify-center">
-                    <button>
-                        Edit
-                    </button>
-                    <button> 
-                        Delete 
-                    </button>
-                </div>
-            </template>
-        </template>
-        <template #empty>
-            <div class="bg-white">No Data</div>
-        </template>
-    </tw-datatable-server>
+  <TwDatatableServer
+    :fetch-data="fetchData"
+    v-model:search="data.search"
+    v-model:limit="data.limit"
+    v-model:offset="data.offset"
+    v-model:selected="data.selected"
+    v-model:sort-by="data.sortBy"
+    v-model:sort-type="data.sortType"
+    :column="data.column"
+    :setting="data.setting"
+  >
+  </TwDatatableServer>
 </template>
 ```
 
+## Props
+
+| Name      | Required |    Type |
+| --------- | :------: | ------: |
+| column    |   true   |   Array |
+| limit     |   true   |  number |
+| offset    |   true   |  number |
+| column    |   true   |   Array |
+| fetchData |   true   | Promise |
+| isLoading |  false   | boolean |
+| sortBy    |  false   |  string |
+| sortType  |  false   |  string |
+| summary   |  false   |  string |
+| search    |  false   |  string |
+| setting   |  false   |  Object |
+| selected  |  false   |   Array |
+
+## Slots
+
+- column
+
+Column slot by default will have some functional handler inside and class binding. you can replace it with your own template
+
+```vue
+<template>
+  <TwDatatableServer>
+    <template #column="{ column, sortType, sortBy }">
+      <!-- Your html goes here -->
+    </template>
+  </TwDatatableServer>
+</template>
+```
+
+- row
+
+Row slot by default will show the data based on the column data given. we can replace the template like this to modify the UI
+
+```vue
+<template>
+  <TwDatatableServer
+    :fetch-data="fetchData"
+    v-model:search="data.search"
+    v-model:limit="data.limit"
+    v-model:offset="data.offset"
+    v-model:selected="data.selected"
+    v-model:sort-by="data.sortBy"
+    v-model:sort-type="data.sortType"
+    :column="data.column"
+    :setting="data.setting"
+  >
+    <template #row="{ column, data }">
+      <template v-if="column.field === 'brand'">
+        {{ data.brand }}
+      </template>
+      <template v-if="column.field === 'category'">
+        {{ data.category }}
+      </template>
+      <template v-if="column.field === 'description'">
+        {{ data.description }}
+      </template>
+      <template v-if="column.field === 'action'">
+        <div class="flex gap-2 justify-center">
+          <button>Edit</button>
+          <button>Delete</button>
+        </div>
+      </template>
+    </template>
+  </TwDatatableServer>
+</template>
+```
+
+- Empty
+
+The empty slot is shown when the data is empty
+
+```vue
+<template>
+  <TwDatatableServer
+    :fetch-data="fetchData"
+    v-model:search="data.search"
+    v-model:limit="data.limit"
+    v-model:offset="data.offset"
+    v-model:selected="data.selected"
+    v-model:sort-by="data.sortBy"
+    v-model:sort-type="data.sortType"
+    :column="data.column"
+    :setting="data.setting"
+  >
+    <template #empty>
+      <div class="p-2 rounded">Sorry, No Data Available</div>
+    </template>
+  </TwDatatableServer>
+</template>
+```
