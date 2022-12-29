@@ -27,6 +27,10 @@ export default {
           text: "Components",
           items: [
             {
+              text: "Accordion",
+              link: "/guide/components/accordion",
+            },
+            {
               text: "Button",
               link: "/guide/components/button",
             },
@@ -63,5 +67,5 @@ export default {
       ],
     },
   },
-  outDir: '../dist'
+  outDir: "../dist",
 };
