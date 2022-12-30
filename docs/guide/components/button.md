@@ -172,7 +172,7 @@ Available Options for Disabled:
 **_Usage:_**
 
 ```vue
-<TwButton :disabled="true">Button With Icon</TwButton>
+<TwButton disabled>Button With Icon</TwButton>
 ```
 
 Default value for Disabled props `false`
@@ -188,7 +188,7 @@ Available Options for Ripple:
 **_Usage:_**
 
 ```vue
-<TwButton :ripple="true">Button With Icon</TwButton>
+<TwButton ripple>Button With Icon</TwButton>
 ```
 
 ## Loading
@@ -202,7 +202,7 @@ Available Options for Loading:
 **_Usage:_**
 
 ```vue
-<TwButton :disabled="true">Button With Icon</TwButton>
+<TwButton loading>Button With Icon</TwButton>
 ```
 
-Default value for Loading props `true`
+Default value for Loading props `false`
