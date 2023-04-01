@@ -1,5 +1,22 @@
 # Button
 
+## Component Preview
+<script setup lang="ts">
+import { TwButton } from "vue3-tailwind"
+</script>
+
+<div class="flex gap-2">
+  <TwButton>
+  Primary
+  </TwButton>
+  <TwButton ripple variant="secondary">
+  Secondary
+  </TwButton>
+  <TwButton ripple variant="secondary" icon="airplay">
+  With Icon
+  </TwButton>
+</div>
+
 ## Usage
 
 ```vue{2}
