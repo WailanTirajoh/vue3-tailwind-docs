@@ -88,7 +88,7 @@ And on your template use the button
 
 ## Props
 
-This is set of properties that can be pass to TwButton component
+This is set of properties that can be pass to TwDropdownMenu component
 
 ## Align
 
